@@ -84,20 +84,38 @@
           </q-card-section>
         </q-card-section>
 
-        <q-separator />
-        <q-card-actions align="center">
-          <q-btn flat round icon="event" />
-          <q-btn flat>
-            Рабочие дни: ПН-ВС
-          </q-btn>
-          <q-btn flat>
-            Время работы: 7:30 - 20:30
-          </q-btn>
-          <q-btn flat color="primary">
-            Написать нам
-          </q-btn>
-        </q-card-actions>
+
       </q-card>
+<!--    <q-separator />-->
+    <q-footer elevated>
+      <q-toolbar>
+        <q-toolbar-title>
+          <q-breadcrumbs active-color="" gutter="lg">
+            <q-breadcrumbs-el label="Рабочие дни: ПН-ВС" />
+            <q-breadcrumbs-el label="Время работы: 7:30 - 20:30" />
+            <q-btn label="Записаться" style="font-size: 20px">
+            </q-btn>
+<!--            <q-btn outline label="Записаться" icon="question_answer"/>-->
+          </q-breadcrumbs>
+
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+<!--            <div class="q-footer">-->
+<!--              <div class="container">-->
+<!--              <q-btn flat round icon="event" />-->
+<!--              <q-btn flat>-->
+<!--                Рабочие дни: ПН-ВС-->
+<!--              </q-btn>-->
+<!--              <q-btn flat>-->
+<!--                Время работы: 7:30 - 20:30-->
+<!--              </q-btn>-->
+<!--              <q-btn flat color="primary">-->
+<!--                Написать нам-->
+<!--              </q-btn>-->
+<!--              </div>-->
+<!--            </div>-->
+
 <!--    </q-page-container>-->
 <!--    <q-drawer-->
 <!--      v-model="leftDrawerOpen"-->
@@ -188,8 +206,9 @@ defineOptions({
   width: 100%
   max-width: 1500px
   margin: 10px auto 20px
-    display: block
+  display: block
 .q-toolbar
   color: #BD944C
+
 
 </style>
