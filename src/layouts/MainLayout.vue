@@ -8,8 +8,8 @@
         <q-space />
         <q-btn-group flat>
           <q-btn to="/" label="О нас" />
-          <q-btn to="/products" label="Продукция" />
-          <q-btn to="/delivery" label="Доставка" />
+          <q-btn to="/products" label="Мероприятия" />
+          <q-btn to="/delivery" label="Галерея" />
           <q-btn to="/contacts" label="Написать нам" />
         </q-btn-group>
       </q-toolbar>
@@ -42,6 +42,6 @@ defineOptions({
   color: #BD944C
 
 .shrink
-  max-width: 1000px
+  max-width: 1500px
   margin: auto
 </style>
