@@ -1,72 +1,70 @@
 <template>
-    <q-page-container>
-      <div class="q-pa-md">
-        <div class="row justify-center q-gutter-md">
+  <q-page-container class="q-pa-xs">
+    <div class="q-ml-lg text-h5">
+      Расписание мероприянтий
+    </div>
 
-            <q-card flat bordered class="my-card q-ma-lg">
-              <img src="~assets/bread1.jpg" alt="" />
+    <q-separator class="q-ma-lg" />
 
-              <q-card-section>
-                <div class="text-h6">Хлеб пшеничный</div>
-                <div class="text-subtitle2">
-                  Мука пшеничная в/с, мука пшеничная ц/з, вода, соль, мука рисовая.</div>
-              </q-card-section>
-            </q-card>
-          <q-card flat bordered class="my-card q-ma-lg">
-            <img src="~assets/bread2.jpg" alt="" />
+    <q-list>
+      <q-item v-for="c in courses" v-bind:key="c.date" class="q-mb-sm">
+        <q-item-section avatar>
+          <q-avatar>
+            <img :src="`public/courses/${c.img}`" alt="">
+          </q-avatar>
+        </q-item-section>
 
-            <q-card-section>
-              <div class="text-h6">Багет хрустящий</div>
-              <div class="text-subtitle2">Мука пшеничная в/с, вода питьевая, соль, дрожжи хлебопекарные прессованные, мука рисовая.</div>
-            </q-card-section>
-          </q-card>
-          <q-card flat bordered class="my-card q-ma-lg">
-            <img src="~assets/croissant.jpg" alt="" />
+        <q-item-section>
+          <q-item-label>{{ c.title }}</q-item-label>
+          <q-item-label caption lines="1">{{ c.descr }}</q-item-label>
+        </q-item-section>
 
-            <q-card-section>
-              <div class="text-h6">Круассан классический</div>
-              <div class="text-subtitle2">Мука пшеничная в/с, глютен, инвертный сахар, соль, сахар, дрожжи, молоко 3.2%, масло сливочное.</div>
-            </q-card-section>
-          </q-card>
-          <q-card flat bordered class="my-card q-ma-lg">
-            <img src="~assets/cookie.jpg" alt="" />
+        <q-item-section>
+          <q-item-label>дата</q-item-label>
+          <q-item-label caption lines="1">{{ c.date }}</q-item-label>
+        </q-item-section>
 
-            <q-card-section>
-              <div class="text-h6">Card </div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card flat bordered class="my-card q-ma-lg">
-            <img src="~assets/bread2.jpg" alt="" />
+        <q-item-section>
+          <q-item-label>мастер</q-item-label>
+          <q-item-label caption lines="1">{{ c.master }}</q-item-label>
+        </q-item-section>
 
-            <q-card-section>
-              <div class="text-h6">Card </div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-          <q-card flat bordered class="my-card q-ma-lg">
-            <img src="~assets/bread2.jpg" alt="" />
-
-            <q-card-section>
-              <div class="text-h6">Card </div>
-              <div class="text-subtitle2">by John Doe</div>
-            </q-card-section>
-          </q-card>
-        </div>
-      </div>
-    </q-page-container>
+        <q-item-section side>
+          <q-btn flat type="link" class="q-banner" label="записаться" href="https://wa.me/79587629882" />
+        </q-item-section>
+      </q-item>
+    </q-list>
+  </q-page-container>
 </template>
 
 <script setup>
+import {ref} from "vue";
+
 defineOptions({
   name: 'ProductsPage'
 });
+
+const courses = ref([
+  {
+    'img': 'wien.jpg',
+    'date': '24 августа',
+    'title': 'Венская выпечка',
+    'descr': 'практический курс для любого уровня',
+    'master': 'Миченко Д. Д.'
+  },
+  {
+    'img': 'bf.jpg',
+    'date': '02 сентября',
+    'title': 'Завтраки',
+    'descr': 'практический курс',
+    'master': 'Миченко Д. Д.'
+  },
+//   ...
+])
+
 </script>
+
 <style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 250px
-img
-  height: 240px
-  width: 250px
+.q-banner
+  color: #BD944C
 </style>
